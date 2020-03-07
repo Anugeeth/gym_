@@ -14,7 +14,7 @@
 
 
 
-#### Install Phpmyadmin(for database management)
+#### Get set go...
 ```console
-sudo apt-get install phpmyadmin
+python3 manage.py runserver
 ```
