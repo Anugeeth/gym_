@@ -1,15 +1,9 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from rest_framework import permissions
+from . import models
+from . import serializers
 
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated  # For authentication
-
-
-# Create your views here.
-
-
-class MemberList(APIView):
-    permission_classes = (IsAuthenticated,)
-    def get(self, request):
-        content = {'message': 'Hello, World!'}
-        return Response(content)
+class MemberViewset(viewsets.ModelViewSet):
+    queryset = models.Member.objects.all()
+    serializer_class = serializers.MemberSerializer
+    permission_classes = [permissions.IsAuthenticated]

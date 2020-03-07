@@ -14,3 +14,4 @@ class Member(models.Model):
     duration = models.IntegerField('subscription duration')
     payment_status = models.BooleanField('subscribed or not', default=True)
     photo = models.URLField('image url')
+
