@@ -17,6 +17,9 @@ class MemberViewset(viewsets.ModelViewSet):
     serializer_class = serializers.MemberSerializer
     # permission_classes = [permissions.IsAuthenticated]
 
+    # def get(self,request , *args, **kwargs)
+    #     queryset = queryset.
+
 # image upload
     parser_class = (FileUploadParser,)
 
