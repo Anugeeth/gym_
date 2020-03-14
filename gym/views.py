@@ -15,12 +15,8 @@ from . import serializers
 class MemberViewset(viewsets.ModelViewSet):
     queryset = models.Member.objects.all()
     serializer_class = serializers.MemberSerializer
+    # uncomment before auth integration 
     # permission_classes = [permissions.IsAuthenticated]
-
-    # def get(self,request , *args, **kwargs)
-    #     queryset = queryset.
-
-# image upload
     parser_class = (FileUploadParser,)
 
     def post(self, request, *args, **kwargs):
@@ -35,3 +31,8 @@ class MemberViewset(viewsets.ModelViewSet):
 # search
     filter_backends = [filters.SearchFilter]
     search_fields = ['name', 'payment_status']
+
+
+class SubscriptionViewset(viewsets.ModelViewSet):
+    queryset = models.PaymentRecords.objects.all()
+    serializer_class = serializers.PaymentSerializer
