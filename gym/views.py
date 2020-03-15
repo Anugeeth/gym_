@@ -1,22 +1,14 @@
-from rest_framework import viewsets
-from rest_framework import permissions, status
-
-# for search
-from rest_framework import filters
-# for image upload
+from rest_framework import viewsets, permissions, status, filters
 from rest_framework.response import Response
-
 from rest_framework.parsers import FileUploadParser
-
-from . import models
-from . import serializers
+from . import models, serializers
 
 
 class MemberViewset(viewsets.ModelViewSet):
     queryset = models.Member.objects.all()
     serializer_class = serializers.MemberSerializer
-    # uncomment before auth integration 
-    # permission_classes = [permissions.IsAuthenticated]
+    # uncomment before auth integration
+    permission_classes = [permissions.IsAuthenticated]
     parser_class = (FileUploadParser,)
 
     def post(self, request, *args, **kwargs):
@@ -36,5 +28,6 @@ class MemberViewset(viewsets.ModelViewSet):
 class SubscriptionViewset(viewsets.ModelViewSet):
     queryset = models.PaymentRecords.objects.all()
     serializer_class = serializers.PaymentSerializer
+    permission_classes = [permissions.IsAuthenticated]
     filter_backends = [filters.SearchFilter]
     search_fields = ['member']
