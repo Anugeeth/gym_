@@ -18,3 +18,4 @@
 ```console
 python3 manage.py runserver
 ```
+#### Install djoser too!!!
