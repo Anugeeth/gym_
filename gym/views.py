@@ -36,3 +36,5 @@ class MemberViewset(viewsets.ModelViewSet):
 class SubscriptionViewset(viewsets.ModelViewSet):
     queryset = models.PaymentRecords.objects.all()
     serializer_class = serializers.PaymentSerializer
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['member']
