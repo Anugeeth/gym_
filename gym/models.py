@@ -26,9 +26,7 @@ class Member(models.Model):
     address = models.CharField(max_length=500)
     payment_status = models.BooleanField('subscribed or not', default=True)
     photo = models.FileField(blank=False, null=True)
-    renew_date = models.DateField(
-        ("Date renewed"), auto_now=False, auto_now_add=False)
-
+    
     def __uuid__(self):
         return self.id
 
