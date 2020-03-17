@@ -5,7 +5,7 @@ from . import models, serializers
 
 
 class MemberViewset(viewsets.ModelViewSet):
-    queryset = models.Member.objects.all()
+    queryset = models.Member.objects.all().order_by('exp_date')
     serializer_class = serializers.MemberSerializer
     # uncomment before auth integration
     # permission_classes = [permissions.IsAuthenticated]
