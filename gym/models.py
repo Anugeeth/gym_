@@ -22,7 +22,7 @@ class Member(models.Model):
         ("Date renewed"), auto_now=False, auto_now_add=False,)
     address = models.CharField(max_length=500)
     payment_status = models.BooleanField('subscribed or not', default=True)
-    photo = models.FileField(blank=False, null=False)
+    photo = models.FileField(blank=False, null=True)
 
     def __uuid__(self):
         return self.id

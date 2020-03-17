@@ -22,7 +22,7 @@ class MemberViewset(viewsets.ModelViewSet):
 
 # search
     filter_backends = [filters.SearchFilter]
-    search_fields = ['name', 'payment_status']
+    search_fields = ['name', 'payment_status','phone']
 
 
 class SubscriptionViewset(viewsets.ModelViewSet):
