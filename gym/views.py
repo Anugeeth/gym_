@@ -25,9 +25,9 @@ class MemberViewset(viewsets.ModelViewSet):
     search_fields = ['name', 'payment_status','phone']
 
 
-class SubscriptionViewset(viewsets.ModelViewSet):
-    queryset = models.PaymentRecords.objects.all()
-    serializer_class = serializers.PaymentSerializer
-    # permission_classes = [permissions.IsAuthenticated]
-    filter_backends = [filters.SearchFilter]
-    search_fields = ['member']
+# class SubscriptionViewset(viewsets.ModelViewSet):
+#     queryset = models.PaymentRecords.objects.all()
+#     serializer_class = serializers.PaymentSerializer
+#     # permission_classes = [permissions.IsAuthenticated]
+#     filter_backends = [filters.SearchFilter]
+#     search_fields = ['member']
