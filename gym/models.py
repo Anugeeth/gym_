@@ -14,8 +14,8 @@ class Member(models.Model):
     name = models.CharField(max_length=200)
 
     age = models.IntegerField('Age of the person')
-    weight = models.IntegerField('weight of the person')
-    height = models.IntegerField('height of the person')
+    weight = models.FloatField('weight of the person')
+    height = models.FloatField('height of the person')
     duration = models.IntegerField('subscription duration', null= False)
 
     phone = models.IntegerField('phone no', max_length=10)
