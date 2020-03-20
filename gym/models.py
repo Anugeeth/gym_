@@ -1,4 +1,4 @@
-import uuid
+# import uuid
 from django.db import models
 
 from datetime import datetime
@@ -7,12 +7,12 @@ from datetime import timedelta
 
 
 class Member(models.Model):
-    id = models.UUIDField(
-        primary_key=True,
-        default=uuid.uuid4,
-        editable=False)
+    # id = models.UUIDField(
+    #     primary_key=True,
+    #     default=uuid.uuid4,
+    #     editable=False)
     name = models.CharField(max_length=200)
-
+    adm_no = models.AutoField('Admission no',primary_key=True)
     age = models.IntegerField('Age of the person')
     weight = models.FloatField('weight of the person')
     height = models.FloatField('height of the person')
@@ -28,7 +28,7 @@ class Member(models.Model):
     photo = models.FileField(blank=False, null=True)
     
     def __uuid__(self):
-        return self.id
+        return self.adm_no
 
 
 # class PaymentRecords(models.Model):
